@@ -11,16 +11,28 @@
       <p><b>Charger la dernière version de Jquery et lier le fichier dans la balise head du document html.</b></p>
 
       <hr>
-      <!-------------------------------------------- Exercice 1 -------------------------------------->
+      <!---------------------------------------- Exercice 1 -------------------------------------->
       <h3><em>Exercice 1</em></h3>
       <p>Créer un bouton "cliquez-moi!" en html. <br>Au clic sur le bouton, afficher une boite de dialogue avec le message :<br><b>"On vous ferait vraiment faire n'importe quoi !"</b></p>
+        <button id="bouton1" name="bouton">cliquez-moi!</button>
+          <script>
+          $(document).ready(function(){
+            $('#bouton1').click(function(){
+              alert("On vous ferait vraiment faire n'importe quoi !");
+            })
+          });
+          </script>
 
       <hr>
       <!-------------------------------------------- Exercice 2 -------------------------------------->
       <h3>Exercice 2</h3>
       <p>Au double click, modifier la largeur de l'image à <b>1735px</b></p>
-      <img src="image1.jpg"/>
-
+      <img id="tiger" src="image1.jpg"/>
+      <script>
+        $('#tiger').dblclick(function(){
+          $('#tiger').width(1735);
+        });
+      </script>
       <hr>
       <!-------------------------------------------- Exercice 3 -------------------------------------->
       <h3>Exercice 3</h3>
@@ -37,7 +49,13 @@
           <p><b>"</b> Il y existe deux manières de concevoir un logiciel. La première, c’est de le faire si simple qu’il est évident qu’il ne présente aucun problème. La seconde, c’est de le faire si compliqué qu’il ne présente aucun problème évident. La première méthode est de loin la plus complexe. <b>"</b>
               <br><b>Charles Antony Richard Hoare</b></p>
       </div>
-
+      <script>
+        $('#exo3').hover(function(){
+          $('#exo3').css({"color": "#fff", "background-color": "#63A8BC", "font-size": "20px", "height": "370px", "width": "450px"});
+            }, function(){
+              $('#exo3').css({"color": "", "background-color": "", "font-size": "", "height": "", "width": ""});
+            });
+      </script>
       <hr>
       <!-------------------------------------------- Exercice 4 -------------------------------------->
       <h3>Exercice 4</h3>
@@ -49,7 +67,17 @@
       <button id="btn1">Vert</button>
       <button id="btn2">Bleu</button>
       <button id="btn3">Rouge</button>
-
+      <script>
+        $('#btn1').click(function(){
+          $('#exo4').css({"color": "green", "border-color": "green"});
+        });
+        $('#btn2').click(function(){
+          $('#exo4').css({"color": "blue", "border-color": "blue"});
+        });
+        $('#btn3').click(function(){
+          $('#exo4').css({"color": "red", "border-color": "red"});
+        });
+      </script>
       <hr>
       <!-------------------------------------------- Exercice 5 -------------------------------------->
       <h3>Exercice 5</h3>
@@ -61,7 +89,14 @@
           <input type="password" placeholder="Votre mot de passe">
           <button type="submit">Valider</button>
       </form>
-
+      <script>
+          $('input').focus(function(){
+            $(this).css({"border": "1px solid green"});
+        });
+          $('input').blur(function(){
+            $(this).css({"border": "1px solid red"});
+        });
+      </script>
       <hr>
       <!-------------------------------------------- Exercice 6 -------------------------------------->
       <h3>Exercice 6</h3>
@@ -75,6 +110,22 @@
       <button id="btn5">Bleu</button>
       <button id="btn6">Rouge</button>
 
-
+      <script>
+        $('#btn4').hover(function(){
+          $('#exo6').css({"color": "green"});
+            }, function(){
+              $('#exo6').css({"color": ""});
+            });
+        $('#btn5').hover(function(){
+          $('#exo6').css({"color": "blue"});
+            }, function(){
+              $('#exo6').css({"color": ""});
+            });
+        $('#btn6').hover(function(){
+          $('#exo6').css({"color": "red"});
+            }, function(){
+              $('#exo6').css({"color": ""});
+        });
+      </script>
   </body>
 </html>
